@@ -9,7 +9,10 @@ public class Popsicles : ScriptableObject
     public int fruitID;
     public string fruitName; 
     public int requiredFruits;
-    public float choppingTime;
+    public int choppingTime;
     public float freezTime;
+
+    public Material liquidMaterial;
+    
 
 }

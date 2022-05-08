@@ -13,7 +13,7 @@ public class UIManager : MonoBehaviour
     public static UIManager uiManager;
 
     //all UI screen references 
-    public GameObject startScreen,commonScreen,fruitSelectionScreen,choppingsectionScreen,blendingSectionScreen,FreezSectionScreen,endScreen;
+    public GameObject startScreen,commonScreen,fruitSelectionScreen,choppingsectionScreen,blendingSectionScreen,GlassFillingScreen,FreezSectionScreen,endScreen,serveScreen;
     
     //screen wise variables to control
 
@@ -22,6 +22,20 @@ public class UIManager : MonoBehaviour
 
     //2. Start Screen Information
     public Text orderText;
+
+    //3. fruit selection screen loading bar
+    public GameObject fruitSelectionLoadingBar;
+    public GameObject fruitCuttingBar;
+    public GameObject blendingBar;
+    public GameObject glassFillingBar;
+
+    public GameObject freezingBar;
+
+    //4. General screen 
+    public Text messageText;
+
+    //5. fruit cutting section
+    public GameObject chopBtn;
 
     void Awake()
     {
@@ -37,5 +51,65 @@ public class UIManager : MonoBehaviour
     public void UpdateCurrentOrderName(string fruitname)
     {
         orderText.text = fruitname + " popsicle please";
+    }
+
+
+    public void SetFruitSelectionBarValues(int max)
+    {
+        fruitSelectionLoadingBar.GetComponent<Slider>().maxValue = max;
+        fruitSelectionLoadingBar.GetComponent<Slider>().value = 0;
+    }
+
+    public void SetFruitCuttingBarValues(int max)
+    {
+        fruitCuttingBar.GetComponent<Slider>().maxValue = max;
+        fruitCuttingBar.GetComponent<Slider>().value = 0;
+    }
+
+    public void FillFruitSelectionBar(int val)
+    {
+        fruitSelectionLoadingBar.GetComponent<Slider>().value = val;
+    }
+    public void FillFruitCuttingBar(int val)
+    {
+        fruitCuttingBar.GetComponent<Slider>().value = val;
+    }
+
+    public void SetBlendingBarValues(int max)
+    {
+        blendingBar.GetComponent<Slider>().maxValue = max;
+        blendingBar.GetComponent<Slider>().value = 0;
+    }
+
+     public void FillBlendingBar(float val)
+    {
+        blendingBar.GetComponent<Slider>().value = val;
+    }
+
+    public void SetGlassFillingBarValues(float max)
+    {
+        glassFillingBar.GetComponent<Slider>().maxValue = max;
+        glassFillingBar.GetComponent<Slider>().value = 0;
+    }
+
+     public void FillGlassFillingBar(float val)
+    {
+        glassFillingBar.GetComponent<Slider>().value = val;
+    }
+
+    public void SetFreezingBarValues(float max)
+    {
+        freezingBar.GetComponent<Slider>().maxValue = max;
+        freezingBar.GetComponent<Slider>().value = 0;
+    }
+
+     public void FillFreezinggBar(float val)
+    {
+        freezingBar.GetComponent<Slider>().value = val;
+    }
+
+    public void SetMessageText(string message)
+    {
+        messageText.text = message;
     }
 }

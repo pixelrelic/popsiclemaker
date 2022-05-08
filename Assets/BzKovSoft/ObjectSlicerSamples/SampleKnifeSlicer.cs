@@ -11,50 +11,22 @@ namespace BzKovSoft.ObjectSlicerSamples
 	/// </summary>
 	public class SampleKnifeSlicer : MonoBehaviour
 	{
-		
-		Vector3 endpos,startpos;
-		public float knifeSpeed = 0.1f;
-
-		#pragma warning disable 0649
+#pragma warning disable 0649
 		[SerializeField]
 		private GameObject _blade;
-		#pragma warning restore 0649
+#pragma warning restore 0649
 
-		void Start()
-		{
-			startpos = transform.position;
-			endpos = new Vector3(transform.position.x,transform.position.y - 1,transform.position.z);
-			
-		}
-		
 		void Update()
 		{
-			//new code : 
-			if(Input.GetButtonDown("Jump"))
+			if (Input.GetMouseButtonDown(0))
 			{
-				//move knife only in y direction
-				StartCoroutine("Chop");
-			} 
+				var knife = _blade.GetComponentInChildren<BzKnife>();
+				knife.BeginNewSlice();
 
-			//old code : 
-			// if (Input.GetMouseButtonDown(0))
-			// {
-			// 	var knife = _blade.GetComponentInChildren<BzKnife>();
-			// 	knife.BeginNewSlice();
-
-			// 	StartCoroutine(SwingSword());
-			// }
+				StartCoroutine(SwingSword());
+			}
 		}
 
-
-		IEnumerator Chop()
-		{   
-			//UnityEngine.Debug.Log("endpos : " + endpos.y);
-			_blade.transform.position = new Vector3(transform.position.x,endpos.y,transform.position.z);
-
-			yield return new WaitForSeconds(knifeSpeed);
-			_blade.transform.position = new Vector3(transform.position.x,startpos.y,transform.position.z);
-		}
 		IEnumerator SwingSword()
 		{
 			var transformB = _blade.transform;

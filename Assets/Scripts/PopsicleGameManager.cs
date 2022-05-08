@@ -28,15 +28,23 @@ public class PopsicleGameManager : MonoBehaviour
 
     
     void Start()
-    {   totalPopsicles = popsicles.Length;
+    {   
+        totalScore = 0;
+        totalPopsicles = popsicles.Length;
         //load currentLevel
         LevelManager.levelManager.LoadCurrentLevel(popsicles[currentLevel],currentDay,totalScore);
     }
 
     public void LoadNextLevel()
-    {
+    {   
+        
+        currentDay ++;
         currentLevel = (currentLevel + 1) % totalPopsicles ;
+        UIManager.uiManager.endScreen.SetActive(false); 
         LevelManager.levelManager.LoadCurrentLevel(popsicles[currentLevel],currentDay,totalScore);
+        
+        //increase current level
+        UIManager.uiManager.UpdateHUD(currentDay,totalScore);
     }
 
 }

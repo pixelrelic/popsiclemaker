@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: CherryPopsicle
   m_EditorClassIdentifier: 
   popsicleID: 5
-  fruitID: 5
+  fruitID: 4
   fruitName: Cherry
   requiredFruits: 3
-  choppingTime: 5
+  choppingTime: 3
   freezTime: 5
+  liquidMaterial: {fileID: 2100000, guid: acc3249016d0a88458f9be1cfd66f9e1, type: 2}

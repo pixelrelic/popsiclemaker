@@ -106,6 +106,7 @@
 -define:ENABLE_TILEMAP
 -define:ENABLE_TIMELINE
 -define:ENABLE_LEGACY_INPUT_MANAGER
+-define:MOREMOUNTAINS_NICEVIBRATIONS
 -define:CINEMACHINE_TIMELINE
 -define:CINEMACHINE_PHYSICS_2D
 -define:CINEMACHINE_PHYSICS
@@ -114,6 +115,7 @@
 -define:CINEMACHINE_UNITY_IMGUI
 -define:CSHARP_7_OR_LATER
 -define:CSHARP_7_3_OR_NEWER
+-r:"Assets/NiceVibrations/ThirdParty/Newtonsoft/Newtonsoft.Json.dll"
 -r:"D:/program files/Unity/2021.1.5f1/Editor/Data/Managed/UnityEditor.Graphs.dll"
 -r:"D:/program files/Unity/2021.1.5f1/Editor/Data/Managed/UnityEngine/UnityEditor.CoreModule.dll"
 -r:"D:/program files/Unity/2021.1.5f1/Editor/Data/Managed/UnityEngine/UnityEditor.DeviceSimulatorModule.dll"

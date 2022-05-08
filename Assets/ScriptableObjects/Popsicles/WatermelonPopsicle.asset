@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: WatermelonPopsicle
   m_EditorClassIdentifier: 
   popsicleID: 3
-  fruitID: 3
+  fruitID: 2
   fruitName: Watermelon
-  requiredFruits: 1
-  choppingTime: 5
+  requiredFruits: 2
+  choppingTime: 2
   freezTime: 5
+  liquidMaterial: {fileID: 2100000, guid: bc6db36bc4dbf2a429c837e975e6fae4, type: 2}
